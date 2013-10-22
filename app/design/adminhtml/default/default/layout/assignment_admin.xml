@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<layout>
+    <!-- Here, we reference the XML node path of our route -->
+    <adminhtml_vendor_index>
+        <reference name="content">
+            <block type="smart_assignment/adminhtml_vendor" name="adminhtml.vendor" />
+        </reference>
+    </adminhtml_vendor_index>
+</layout>

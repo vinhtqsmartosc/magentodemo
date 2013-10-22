@@ -1,0 +1,33 @@
+<config>
+    <menu>
+        <sales translate="title" module="sales">
+            <title>Sales</title>
+            <sort_order>20</sort_order>
+            <depends>
+                <module>Mage_Sales</module>
+            </depends>
+            <children>
+                <vendors translate="title" module="smart_assignment">
+                    <title>Vendors</title>
+                    <action>adminhtml/vendor</action>
+                    <sort_order>3000</sort_order>
+                </vendors>
+            </children>
+        </sales>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <sales>
+                        <children>
+                            <vendor>
+                                <title>Vendor</title>
+                            </vendor>
+                        </children>
+                    </sales>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

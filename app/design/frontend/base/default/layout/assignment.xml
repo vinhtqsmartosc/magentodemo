@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+
+<layout>
+
+
+    <assignment_index_index>
+        <reference name="content">
+            <block type="smart_assignment/show" name="main.demo" />
+        </reference>
+
+    </assignment_index_index>
+
+    <assignment_index_show>
+        <reference name="content">
+            <block type="smart_assignment/show" name="body.demo" template="assignment/body.phtml"/>
+        </reference>
+    </assignment_index_show>
+
+
+
+</layout>

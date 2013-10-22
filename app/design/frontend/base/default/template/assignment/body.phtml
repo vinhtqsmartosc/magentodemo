@@ -1,0 +1,17 @@
+<?php $productCollection = $this->getProductByAttr(); ?>
+<?php if($productCollection) : ?>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>SKU</th>
+    </tr>
+    <?php foreach($productCollection as $product): ?>
+        <tr>
+            <td><?php echo $product->getName(); ?></td>
+            <td><?php echo $product->getSKU(); ?></td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+<?php else: ?>
+<h3>This vendor doesn't have any products</h3>
+<?php endif; ?>

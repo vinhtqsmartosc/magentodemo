@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Smart_Assignment>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Smart_Assignment>
+    </modules>
+</config>

@@ -1,0 +1,23 @@
+<?php
+$colection = $this->getVendorCollection();
+if($colection): ?>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+    </tr>
+    <?php foreach($colection as $vendor) :?>
+    <tr>
+        <td><?php echo $vendor->getVendorId() ?></td>
+        <td><a href="<?php echo $this->getUrl('*/*/show', array('vendor' => $vendor->getVendorId())) ?>"><?php echo $vendor->getName() ?></a></td>
+        <td><?php echo $vendor->getDescription() ?></td>
+    </tr>
+    <?php endforeach;
+ //getUrl(): * la controller, module giong voi controller hien tai ?>
+</table>
+<?php endif; ?>
+
+
+
+
