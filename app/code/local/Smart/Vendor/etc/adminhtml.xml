@@ -1,0 +1,28 @@
+<config>
+    <menu>
+        <catalog>
+            <children>
+                <vendor translate="title" module="smart_vendor">
+                    <title>Vendor Management</title>
+                    <action>adminhtml/vendors</action>
+                </vendor>
+            </children>
+        </catalog>
+    </menu>
+
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <vendor>
+                                <title>Vendor Management</title>
+                            </vendor>
+                        </children>
+                    </catalog>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

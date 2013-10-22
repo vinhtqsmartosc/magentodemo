@@ -1,0 +1,7 @@
+<layout>
+    <adminhtml_vendors_index>
+        <reference name="content">
+            <block type="smart_vendor/adminhtml_vendor" name="admin.vendor"/>
+        </reference>
+    </adminhtml_vendors_index>
+</layout>

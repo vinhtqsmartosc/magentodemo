@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Smart_Vendor>
+            <version>0.1.0</version>
+        </Smart_Vendor>
+    </modules>
+    <global>
+        <models>
+            <smart_vendor>
+                <class>Smart_Vendor_Model</class>
+                <resourceModel>smart_vendor_resource</resourceModel>
+            </smart_vendor>
+            <smart_vendor_resource>
+                <class>Smart_Vendor_Model_Resource</class>
+                <entities>
+                    <vendor>
+                        <table>vendors</table>
+                    </vendor>
+                </entities>
+            </smart_vendor_resource>
+        </models>
+        <blocks>
+            <smart_vendor>
+                <class>Smart_Vendor_Block</class>
+            </smart_vendor>
+        </blocks>
+        <helpers>
+            <smart_vendor>
+                <class>Smart_Vendor_Helper</class>
+            </smart_vendor>
+        </helpers>
+        <resources>
+            <smart_vendor_setup>
+                <setup>
+                    <module>Smart_Vendor</module>
+                </setup>
+            </smart_vendor_setup>
+        </resources>
+    </global>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Smart_Vendor before="Mage_Adminhtml">Smart_Vendor_Adminhtml</Smart_Vendor>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <smart_vendor>
+                    <file>admin_vendor.xml</file>
+                </smart_vendor>
+            </updates>
+        </layout>
+    </adminhtml>
+
+</config>
