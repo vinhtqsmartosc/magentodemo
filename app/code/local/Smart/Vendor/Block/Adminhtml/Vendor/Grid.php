@@ -65,13 +65,13 @@ class Smart_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widg
 
         $this->getMassactionBlock()->addItem('delete', array(
             'label'=> $this->__('Delete'),
-            'url'  => $this->getUrl('*/*/massDelete'),
+            'url'  => $this->getUrl('*/*/multiDelete'),
             'confirm' => $this->__('Are you sure?')
         ));
 
         $this->getMassactionBlock()->addItem('is_active', array(
             'label'=> $this->__('Change activation'),
-            'url'  => $this->getUrl('*/*/massChangeActive', array('_current'=>true)),
+            'url'  => $this->getUrl('*/*/multiChangeActive', array('_current'=>true)),
             'additional' => array(
                 'visibility' => array(
                     'name'      => 'is_active',

@@ -32,7 +32,7 @@ class Smart_Vendor_Adminhtml_VendorsController extends Mage_Adminhtml_Controller
             $model->delete();
             $model->save();
 
-            Mage::getSingleton('adminhtml/session')->addSuccess($this->__('The vendor has been deleted.'));
+            Mage::getSingleton('adminhtml/session')->addSuccess($this->__('Delete Successfully.'));
             $this->_redirect('*/*/');
         }
         catch (Mage_Core_Exception $e) {
@@ -104,6 +104,57 @@ class Smart_Vendor_Adminhtml_VendorsController extends Mage_Adminhtml_Controller
             Mage::getSingleton('adminhtml/session')->setVendorData($postData);
             $this->_redirectReferer();
         }
+    }
+
+    public function multiDeleteAction()
+    {
+        $vendorIDs = $this->getRequest()->getParam('vendor');
+        $model = Mage::getModel('smart_vendor/vendor');
+        try {
+            foreach ($vendorIDs as $vendorID) {
+
+                $model->load($vendorID);
+                $model->delete();
+                $model->save();
+            }
+            Mage::getSingleton('adminhtml/session')->addSuccess($this->__('Delete Successfully.'));
+
+        }
+        catch (Mage_Core_Exception $e) {
+            Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+        }
+        catch (Exception $e) {
+            Mage::getSingleton('adminhtml/session')->addError($this->__('An error occurred while deleting vendor(s).'));
+        }
+
+        $this->_redirect('*/*/');
+    }
+
+    public function multiChangeActiveAction()
+    {
+        $vendorsID = $this->getRequest()->getParam('vendor');
+        $is_active = (int) $this->getRequest()->getParam('is_active');
+        $model = Mage::getModel('smart_vendor/vendor');
+        try {
+            foreach ($vendorsID as $vendorID) {
+                $model->load($vendorID);
+                $model->setIsActive($is_active);
+                $model->save();
+            }
+            $this->_getSession()->addSuccess(
+                $this->__('Total of %d record(s) have been updated.', count($vendorsID))
+            );
+        }
+        catch (Mage_Core_Model_Exception $e) {
+            $this->_getSession()->addError($e->getMessage());
+        } catch (Mage_Core_Exception $e) {
+            $this->_getSession()->addError($e->getMessage());
+        } catch (Exception $e) {
+            $this->_getSession()
+                ->addException($e, $this->__('An error occurred while updating the vendor(s) status.'));
+        }
+
+        $this->_redirect('*/*/');
     }
 
     public function messageAction()
