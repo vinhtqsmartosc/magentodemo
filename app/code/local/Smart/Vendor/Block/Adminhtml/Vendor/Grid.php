@@ -58,6 +58,36 @@ class Smart_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widg
         return parent::_prepareColumns();
     }
 
+    protected function _prepareMassaction()
+    {
+        $this->setMassactionIdField('vendor_id');
+        $this->getMassactionBlock()->setFormFieldName('vendor');
+
+        $this->getMassactionBlock()->addItem('delete', array(
+            'label'=> $this->__('Delete'),
+            'url'  => $this->getUrl('*/*/massDelete'),
+            'confirm' => $this->__('Are you sure?')
+        ));
+
+        $this->getMassactionBlock()->addItem('is_active', array(
+            'label'=> $this->__('Change activation'),
+            'url'  => $this->getUrl('*/*/massChangeActive', array('_current'=>true)),
+            'additional' => array(
+                'visibility' => array(
+                    'name'      => 'is_active',
+                    'type'      => 'select',
+                    'class'     => 'required-entry',
+                    'label'     => $this->__('Is Active'),
+                    'values'    => array(
+                        1       => $this->__('Enabled'),
+                        0       => $this->__('Disabled'),
+                    ),
+                )
+            )
+        ));
+        return $this;
+    }
+
     public function getRowUrl($row){
         return $this->getUrl('*/*/edit', array('id' => $row->getId()));
     }

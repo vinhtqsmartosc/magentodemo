@@ -78,7 +78,6 @@ class Smart_Assignment_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_
             'confirm' => $this->__('Are you sure?')
         ));
 
-        array_unshift($statuses, array('label'=>'', 'value'=>''));
         $this->getMassactionBlock()->addItem('is_active', array(
             'label'=> Mage::helper('smart_assignment')->__('Change activation'),
             'url'  => $this->getUrl('*/*/massStatus', array('_current'=>true)),

@@ -21,6 +21,29 @@ class Smart_Vendor_Adminhtml_VendorsController extends Mage_Adminhtml_Controller
         $this->_forward('edit');
     }
 
+    public function deleteAction()
+    {
+        try {
+
+            $vendorID = $this->getRequest()->getParam('id');
+            $model = Mage::getModel('smart_vendor/vendor');
+
+            $model->load($vendorID);
+            $model->delete();
+            $model->save();
+
+            Mage::getSingleton('adminhtml/session')->addSuccess($this->__('The vendor has been deleted.'));
+            $this->_redirect('*/*/');
+        }
+        catch (Mage_Core_Exception $e) {
+            Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
+        }
+        catch (Exception $e) {
+            Mage::getSingleton('adminhtml/session')->addError($this->__('An error occurred while deleting this vendor.'));
+        }
+
+    }
+    
     public function editAction()
     {
         $this->_initAction();
