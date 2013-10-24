@@ -62,11 +62,6 @@ class Smart_Assignment_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_
         return parent::_prepareColumns();
     }
 
-//    public function getGridUrl()
-//    {
-//        return $this->getUrl('*/*/grid', array('_current'=>true));
-//    }
-
     protected function _prepareMassaction()
     {
         $this->setMassactionIdField('vendor_id');
