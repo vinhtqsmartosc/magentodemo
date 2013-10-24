@@ -128,7 +128,7 @@ class Smart_Assignment_Adminhtml_VendorController extends Mage_Adminhtml_Control
 
     protected function _isAllowed()
     {
-        return Mage::getSingleton('admin/session')->isAllowed('sales/smart_assignment_vendor');
+         return Mage::getSingleton('admin/session')->isAllowed('sales/smart_assignment_vendor');
     }
 
     public function massDeleteAction()
