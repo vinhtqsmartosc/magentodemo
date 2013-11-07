@@ -60,32 +60,38 @@ class Smart_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widg
 
     protected function _prepareMassaction()
     {
-        $this->setMassactionIdField('vendor_id');
-        $this->getMassactionBlock()->setFormFieldName('vendor');
+        $_enable_filter = Mage::getStoreConfig('vendor/filter/is_enable');
+        if($_enable_filter) {
 
-        $this->getMassactionBlock()->addItem('delete', array(
-            'label'=> $this->__('Delete'),
-            'url'  => $this->getUrl('*/*/multiDelete'),
-            'confirm' => $this->__('Are you sure?')
-        ));
+            $this->setMassactionIdField('vendor_id');
+            $this->getMassactionBlock()->setFormFieldName('vendor');
 
-        $this->getMassactionBlock()->addItem('is_active', array(
-            'label'=> $this->__('Change activation'),
-            'url'  => $this->getUrl('*/*/multiChangeActive', array('_current'=>true)),
-            'additional' => array(
-                'visibility' => array(
-                    'name'      => 'is_active',
-                    'type'      => 'select',
-                    'class'     => 'required-entry',
-                    'label'     => $this->__('Is Active'),
-                    'values'    => array(
-                        1       => $this->__('Enabled'),
-                        0       => $this->__('Disabled'),
-                    ),
+            $this->getMassactionBlock()->addItem('delete', array(
+                'label'=> $this->__('Delete'),
+                'url'  => $this->getUrl('*/*/multiDelete'),
+                'confirm' => $this->__('Are you sure?')
+            ));
+
+            $this->getMassactionBlock()->addItem('is_active', array(
+                'label'=> $this->__('Change activation'),
+                'url'  => $this->getUrl('*/*/multiChangeActive', array('_current'=>true)),
+                'additional' => array(
+                    'visibility' => array(
+                        'name'      => 'is_active',
+                        'type'      => 'select',
+                        'class'     => 'required-entry',
+                        'label'     => $this->__('Is Active'),
+                        'values'    => array(
+                            1       => $this->__('Enabled'),
+                            0       => $this->__('Disabled'),
+                        ),
+                    )
                 )
-            )
-        ));
-        return $this;
+            ));
+            return $this;
+        } else {
+            return;
+        }
     }
 
     public function getRowUrl($row){

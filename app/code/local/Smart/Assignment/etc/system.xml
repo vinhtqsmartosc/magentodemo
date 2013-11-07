@@ -3,7 +3,7 @@
     <sections>
         <vendor translate="label">
             <label>Vendor</label>
-            <tab>sales</tab>
+            <tab>catalog</tab>
             <frontend_type>text</frontend_type>
             <sort_order>3000</sort_order>
             <show_in_default>1</show_in_default>
@@ -29,6 +29,25 @@
                         </is_active>
                     </fields>
                 </active_vendor>
+                <filter translate="label">
+                    <label>Vendor Grid Setting</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>3000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <is_enable>
+                            <label>Enable Vendor Quick Update</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>20</sort_order>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </is_enable>
+                    </fields>
+                </filter>
             </groups>
         </vendor>
     </sections>

@@ -99,4 +99,12 @@
             </resources>
         </acl>
     </adminhtml>
+
+    <default>
+        <vendor>
+            <filter>
+                <is_enable>1</is_enable>
+            </filter>
+        </vendor>
+    </default>
 </config>
