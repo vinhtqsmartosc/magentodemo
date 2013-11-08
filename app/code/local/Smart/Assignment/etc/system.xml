@@ -2,7 +2,7 @@
 <config>
     <sections>
         <vendor translate="label">
-            <label>Vendor</label>
+            <label>Vendor Management</label>
             <tab>catalog</tab>
             <frontend_type>text</frontend_type>
             <sort_order>3000</sort_order>
