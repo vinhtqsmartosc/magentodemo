@@ -25,7 +25,7 @@ class Smart_Vendor_Block_Adminhtml_Vendor_Edit_Form extends Mage_Adminhtml_Block
         ));
 
         $fieldset = $form->addFieldset('base_fieldset', array(
-            'legend'    => Mage::helper('checkout')->__('Baz Information'),
+            'legend'    => Mage::helper('checkout')->__('Vendor Information'),
             'class'     => 'fieldset-wide',
         ));
 
