@@ -4,4 +4,12 @@
             <block type="smart_vendor/adminhtml_vendor" name="admin.vendor"/>
         </reference>
     </adminhtml_vendors_index>
+
+    <adminhtml_system_config_edit>
+        <reference name="head">
+            <action method="addJs">
+                <script>jscolor/jscolor.js</script>
+            </action>
+        </reference>
+    </adminhtml_system_config_edit>
 </layout>

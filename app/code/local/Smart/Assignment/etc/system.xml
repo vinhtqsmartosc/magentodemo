@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <sections>
-        <vendor translate="label">
+        <vendor translate="label" module="smart_vendor">
             <label>Vendor Management</label>
             <tab>catalog</tab>
             <frontend_type>text</frontend_type>
@@ -48,6 +48,25 @@
                         </is_enable>
                     </fields>
                 </filter>
+                <grid_color_setting>
+                    <label>Adminhtml Grid Field's Color</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>3000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <color>
+                            <label>Choose Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>color</validate> <!-- This is important -->
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </color>
+                    </fields>
+                </grid_color_setting>
             </groups>
         </vendor>
     </sections>

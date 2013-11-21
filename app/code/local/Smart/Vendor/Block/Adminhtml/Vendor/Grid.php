@@ -24,6 +24,7 @@ class Smart_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widg
         return parent::_prepareCollection();
     }
 
+
     protected function _prepareColumns(){
         $this->addColumn('vendor_id',
             array(
@@ -39,6 +40,7 @@ class Smart_Vendor_Block_Adminhtml_Vendor_Grid extends Mage_Adminhtml_Block_Widg
             array(
                 'header'    =>  $this->__('Vendor Name'),
                 'index'     =>  'name',
+                'renderer'  => 'Smart_Vendor_Block_Adminhtml_Renderer_Custom',
             )
         );
 
